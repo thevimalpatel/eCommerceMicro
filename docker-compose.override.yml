@@ -12,13 +12,14 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "6003:80"
-    
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 
   ecommerce.api.products:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "6001:80"
+      - "6000:80"
 
 
   ecommerce.api.search:
